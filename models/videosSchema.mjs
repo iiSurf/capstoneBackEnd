@@ -1,19 +1,15 @@
 import mongoose from 'mongoose';
 
-const progressSchema = mongoose.Schema({
-    date: {
-        type: Date,
-        required: true,
-    },
-    duration: {
-        type: Number,
-        required: true,
-    },
-    type: {
+const videosSchema = new mongoose.Schema({
+    title: {
         type: String,
         required: true,
     },
-    notes: {
+    url: {
+        type: String,
+        required: true,
+    },
+    description: {
         type: String,
     },
 });
