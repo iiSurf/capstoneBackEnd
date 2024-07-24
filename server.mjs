@@ -22,6 +22,10 @@ app.use(cors());
 app.use('/progress', progressRoute);
 app.use('/videos', videosRoute);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Homepage!');
+})
+
 // Error Checking Middleware
 app.use((err, _req, res, next) => {
     res.status(500).json({ msg: 'You have encountered an error. Please try again' });
