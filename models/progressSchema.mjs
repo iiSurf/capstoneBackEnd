@@ -1,21 +1,21 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const progressSchema = mongoose.Schema({
-    date: {
-        type: Date,
-        required: true,
-    },
-    duration: {
-        type: Number,
-        required: true,
-    },
-    type: {
-        type: String,
-        required: true,
-    },
-    notes: {
-        type: String,
-    },
+const progressSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+    required: true,
+  },
+  duration: {
+    type: Number,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  notes: {
+    type: String,
+  },
 });
 
-export default mongoose.model('videos', videosSchema);
+export default mongoose.model("Progress", progressSchema);

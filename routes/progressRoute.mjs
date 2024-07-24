@@ -2,16 +2,16 @@ import express from 'express';
 const router = express.Router();
 import progressCtrl from '../controllers/progress.mjs';
 
-//Create
+// Create
 router.post('/', progressCtrl.CreateProgress);
 
-//Read
+// Read
 router.get('/', progressCtrl.ReadProgress);
 
-//Update
+// Update
 router.put('/:id', progressCtrl.UpdateProgress);
 
-//Delete
+// Delete
 router.delete('/:id', progressCtrl.DeleteProgress);
 
 export default router;

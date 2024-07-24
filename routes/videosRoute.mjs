@@ -2,16 +2,16 @@ import express from 'express';
 const router = express.Router();
 import videosCtrl from '../controllers/videos.mjs';
 
-//Create
+// Create
 router.post('/', videosCtrl.CreateVideos);
 
-//Read
+// Read
 router.get('/', videosCtrl.ReadVideos);
 
-//Update
+// Update
 router.put('/:id', videosCtrl.UpdateVideos);
 
-//Delete
+// Delete
 router.delete('/:id', videosCtrl.DeleteVideos);
 
 export default router;
