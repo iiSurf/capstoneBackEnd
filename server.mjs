@@ -6,6 +6,7 @@ import connectDB from './config/db.mjs';
 import videosRoute from './routes/videosRoute.mjs';
 import progressRoute from './routes/progressRoute.mjs';
 import videos from './utilities/data.mjs';
+import videosCollection from './utilities/videoData.mjs';
 
 // Configurations
 dotenv.config();
@@ -23,16 +24,18 @@ app.use(cors());
 app.use('/progress', progressRoute);
 app.use('/videos', videosRoute);
 
-app.get('/seed', async (req, res) => {
-    // To clear database before filling it with new data
-    // await videos.deleteMany({});
-    await videos.create(videos);
-
+app.get('/', (req, res) => {
     res.send('Welcome to the Homepage!');
 })
 
 //Create a seed route to fill our database with data
 app.get('/seed', async (req, res) => {
+        // To clear database before filling it with new data
+    // await videosCollection.deleteMany({});
+    // await videos.create(videosCollection);
+        // To clear database before filling it with new data
+    // await progressCollection.deleteMany({});
+    // await progressSchema.create(videosCollection);
     res.send('Seeding Database');
 })
 
