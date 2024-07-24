@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './config/db.mjs';
 import videosRoute from './routes/videosRoute.mjs';
 import progressRoute from './routes/progressRoute.mjs';
+import videos from './utilities/data.mjs';
 
 // Configurations
 dotenv.config();
@@ -22,8 +23,17 @@ app.use(cors());
 app.use('/progress', progressRoute);
 app.use('/videos', videosRoute);
 
-app.get('/', (req, res) => {
+app.get('/seed', async (req, res) => {
+    // To clear database before filling it with new data
+    // await videos.deleteMany({});
+    await videos.create(videos);
+
     res.send('Welcome to the Homepage!');
+})
+
+//Create a seed route to fill our database with data
+app.get('/seed', async (req, res) => {
+    res.send('Seeding Database');
 })
 
 // Error Checking Middleware
