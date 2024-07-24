@@ -15,7 +15,7 @@ const CreateVideos = async (req, res) => {
 
 const ReadVideos = async (req, res) => {
     try {
-        //Get data and save to variable
+        //Get data and save to allVideos
         const allVideos = await Videos.find({});
         //Send data to front end: res
         res.json(allVideos);
