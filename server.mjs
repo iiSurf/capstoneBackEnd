@@ -5,7 +5,9 @@ import cors from 'cors';
 import connectDB from './config/db.mjs';
 import videosRoute from './routes/videosRoute.mjs';
 import progressRoute from './routes/progressRoute.mjs';
-import videos from './utilities/data.mjs';
+import Progress from './models/progressSchema.mjs';
+import Videos from './models/videosSchema.mjs';
+import progressCollection from './utilities/progressData.mjs';
 import videosCollection from './utilities/videoData.mjs';
 
 // Configurations
@@ -29,15 +31,20 @@ app.get('/', (req, res) => {
 })
 
 //Create a seed route to fill our database with data
-app.get('/seed', async (req, res) => {
-        // To clear database before filling it with new data
-    // await videosCollection.deleteMany({});
-    // await videos.create(videosCollection);
-        // To clear database before filling it with new data
-    // await progressCollection.deleteMany({});
-    // await progressSchema.create(videosCollection);
-    res.send('Seeding Database');
-})
+// app.get('/seed', async (req, res) => {
+//     try {
+//     // To clear database before filling it with new data
+//     // await Videos.deleteMany({});
+//     await Videos.create(videosCollection);
+//     // To clear database before filling it with new data
+//     // await Progress.deleteMany({});
+//     await Progress.create(progressCollection);
+//     res.send('Seeding Database');
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ msg: 'Seeding Database Unsuccessful' });
+//     }
+// });
 
 // Error Checking Middleware
 app.use((err, _req, res, next) => {
