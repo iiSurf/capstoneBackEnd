@@ -30,14 +30,16 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Homepage!');
 })
 
-//Create a seed route to fill our database with data
+// // Create a seed route to fill our database with data
 // app.get('/seed', async (req, res) => {
 //     try {
 //     // To clear database before filling it with new data
-//     // await Videos.deleteMany({});
+//     await Videos.deleteMany({});
+//     // Populate database with videos
 //     await Videos.create(videosCollection);
 //     // To clear database before filling it with new data
-//     // await Progress.deleteMany({});
+//     await Progress.deleteMany({});
+//     // Populate database with Progress cards
 //     await Progress.create(progressCollection);
 //     res.send('Seeding Database');
 //     } catch (err) {
