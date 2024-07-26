@@ -23,12 +23,12 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use('/progress', progressRoute);
-app.use('/videos', videosRoute);
-
 app.get('/', (req, res) => {
     res.send('Welcome to the Homepage!');
 })
+
+app.use('/progress', progressRoute);
+app.use('/videos', videosRoute);
 
 // // Create a seed route to fill our database with data
 // app.get('/seed', async (req, res) => {
