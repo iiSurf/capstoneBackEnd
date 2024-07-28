@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Homepage!');
 })
 
-app.use('/progress', progressRoute);
-app.use('/videos', videosRoute);
+app.use('/front/progress', progressRoute);
+app.use('/front/videos', videosRoute);
 
 // // Create a seed route to fill our database with data
 // app.get('/seed', async (req, res) => {
