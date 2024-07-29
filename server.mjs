@@ -5,10 +5,13 @@ import cors from 'cors';
 import connectDB from './config/db.mjs';
 import videosRoute from './routes/videosRoute.mjs';
 import progressRoute from './routes/progressRoute.mjs';
+import goalsRoute from './routes/goalsRoute.mjs';
 import Progress from './models/progressSchema.mjs';
 import Videos from './models/videosSchema.mjs';
+import Goals from './models/goalsSchema.mjs';
 import progressCollection from './utilities/progressData.mjs';
-import videosCollection from './utilities/videoData.mjs';
+import videosCollection from './utilities/videosData.mjs';
+import goalsCollection from './utilities/goalsData.mjs';
 
 // Configurations
 dotenv.config();
@@ -29,18 +32,19 @@ app.get('/', (req, res) => {
 
 app.use('/front/progress', progressRoute);
 app.use('/front/videos', videosRoute);
+app.use('/goals', goalsRoute);
 
 // // Create a seed route to fill our database with data
 // app.get('/seed', async (req, res) => {
 //     try {
 //     // To clear database before filling it with new data
 //     await Videos.deleteMany({});
-//     // Populate database with videos
-//     await Videos.create(videosCollection);
-//     // To clear database before filling it with new data
 //     await Progress.deleteMany({});
-//     // Populate database with Progress cards
+//     // await Goals.deleteMany({});
+//     // Populate database with new data
+//     await Videos.create(videosCollection);
 //     await Progress.create(progressCollection);
+//     await Goals.create(goalsCollection);
 //     res.send('Seeding Database');
 //     } catch (err) {
 //         console.error(err);
