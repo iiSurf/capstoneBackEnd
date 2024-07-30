@@ -1,3 +1,4 @@
+// Seed in to database
 const goalsCollection = [
   {
     goal: "Complete 12 sessions of breathing",

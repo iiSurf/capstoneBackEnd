@@ -1,3 +1,4 @@
+// Seed in to database
 const videosCollection = [
   {
     title: 'Box Breathing',

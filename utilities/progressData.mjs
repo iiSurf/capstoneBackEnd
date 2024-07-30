@@ -1,3 +1,4 @@
+// Seed in to database
 const progressCollection = [
   {
     date: '2024-07-24T09:34:00Z',
