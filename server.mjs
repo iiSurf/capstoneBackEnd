@@ -6,12 +6,12 @@ import connectDB from './config/db.mjs';
 import videosRoute from './routes/videosRoute.mjs';
 import progressRoute from './routes/progressRoute.mjs';
 import goalsRoute from './routes/goalsRoute.mjs';
-import Progress from './models/progressSchema.mjs';
-import Videos from './models/videosSchema.mjs';
-import Goals from './models/goalsSchema.mjs';
 import progressCollection from './utilities/progressData.mjs';
 import videosCollection from './utilities/videosData.mjs';
 import goalsCollection from './utilities/goalsData.mjs';
+import Progress from './models/progressSchema.mjs';
+import Videos from './models/videosSchema.mjs';
+import Goals from './models/goalsSchema.mjs';
 
 // Configurations
 dotenv.config();
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 app.use('/front/progress', progressRoute);
 app.use('/front/videos', videosRoute);
-app.use('/goals', goalsRoute);
+app.use('/front/goals', goalsRoute);
 
 // // Create a seed route to fill our database with data
 // app.get('/seed', async (req, res) => {
